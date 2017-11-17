@@ -89,7 +89,6 @@ class MusicApp : Application() {
                     }
                     setProxy(host, port!!)
                     saveProxy(host, port)
-                    vkView.engine.reload()
                 }
             })
         }

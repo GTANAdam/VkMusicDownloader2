@@ -19,7 +19,7 @@ class AudioDownloader(val audios: List<Audio>, val directory: File, val overwrit
                 while (!stepFinished) {
                     if (isCanceled) break
                     try {
-                        val fileName = normalizeFileName(audio.artist + " - " + audio.title) + ".mp3"
+                        val fileName = (audios.size - i).toString() + " - " + normalizeFileName(audio.title) + " - " + normalizeFileName(audio.artist) + ".mp3"
                         val file = File(directory, fileName)
                         if (overwriteExisting || !file.exists()) {
                             val audioURL = URL(audio.url)
